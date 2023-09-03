@@ -1,0 +1,6 @@
+1. Create clean landing screen.
+2. Create project page layout.
+3. Add important projects.
+4. Create and add project preview.
+5. Add contact me section.
+6. Add more projects.
