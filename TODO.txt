@@ -4,3 +4,6 @@
 4. Create and add project preview.
 5. Add contact me section.
 6. Add more projects.
+
+misc:
+Ask Soren for a website icon.
