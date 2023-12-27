@@ -2,8 +2,19 @@ let occupation_rotate_length = 4500;
 let occupation_animation_length = 1000;
 let occupation_index = 0;
 
-function add_project(project_data){
-    
+function project_factory(project_data){
+    project_name = project_data.name || "";
+    project_imgs = project_data.imgs || [];
+    project_year = project_data.year_made;
+    project_category = project_data.category || "";
+    project_description = project_data.description || "";
+    project_description = "";
+    return `
+    <div class="project-container">
+        <h2 class="project-name">${project_name}</h2>
+        <img class="project-image" src="${project_imgs[0]}">
+        <p class="project-description">${project_description}</p>
+    </div>`
 }
 
 $(window).on('load', function () {
@@ -27,7 +38,8 @@ $(window).on('load', function () {
     // Project content
     $.getJSON("projects.json", (data) => {
         $.each(data, (key, val) => {
-            console.log(key, val);
+            console.log(project_factory(val));
+            $("main").append(project_factory(val));
         });
     });
 });
