@@ -1,0 +1,36 @@
+{
+    "titles": [
+        "Leather Worker",
+        "Designer",
+        "Woodworker",
+        "Cordwainer"
+    ],
+    "projects": [
+        {
+            "name": "Heart Shoes",
+            "category": "shoes",
+            "year_made": 2021,
+            "description": "As my latest pair of shoes I’ve made, I consider these the best, and the culmination of much of what I’ve learned. These are the first pair of sneakers with all the parts that make up a sneaker: a sewn upper with eyelets and a tongue, heel padding, and heat formed toe and heel caps, that keep the shape.",
+            "imgs": [
+                "imgs/heart_shoes/image38.jpg"
+            ]
+        },
+        {
+            "name": "Down Bucket Hat",
+            "year_made": 2021,
+            "category": "clothing",
+            "imgs": [
+                "imgs/down_bucket_hat/image36.jpg"
+            ]
+        },
+        {
+            "name": "Planthetic Pipes",
+            "year_made": 2019,
+            "category": "woodwork",
+            "description": "Planthetic Pipes was a brand project I started in 2019 to explore wooden pipe making and test different design ideas using my wooden lathe and woodworking shop. I learned a lot about scaled production and designing with the manufacturing process in mind.",
+            "imgs": [
+                "imgs/planthetic_pipes/image34.jpg"
+            ]
+        }
+    ]
+}
