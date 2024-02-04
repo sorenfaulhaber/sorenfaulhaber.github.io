@@ -85,10 +85,13 @@ header {
 }
 
 #menu-bar {
+    position: sticky;
+    top: 1px;
     display: flex;
     justify-content: flex-end;
     width: 100%;
     align-items: center;
+
 }
 
 .menu-line {
@@ -105,6 +108,11 @@ header {
 #menu-bar ul li {
     padding: 10px;
     font-size: var(--heading2);
+}
+
+#menu-bar ul li:hover {
+    cursor: pointer;
+    text-decoration-line: underline;
 }
 
 main {
