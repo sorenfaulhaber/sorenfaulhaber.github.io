@@ -32,7 +32,7 @@ $(window).on('load', function () {
             $("#oc-container").append(title_factory(key, val));
         });
         $.each(data["projects"], (key, val) => {
-            $("main").append(project_factory(val));
+            $("#project-section").append(project_factory(val));
         });
         $("#oc-container:first-child").addClass("oc-text-shown");
         let occupations_len = $("#oc-container").children().length;
