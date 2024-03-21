@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    text-decoration: none;
 }
 
 :root {
@@ -9,7 +10,8 @@
     --title: 5rem;
     --subtitle: 4rem;
     --heading1: 3rem;
-    --heading2: 1.5rem;
+    --heading2: 2rem;
+    --text: 1.5rem;
     background-color: var(--primary-background);
     font-family: 'Cormorant Garamond', serif;
 }
@@ -59,9 +61,8 @@ header {
     display: contents   ;
 }
 
-
-
 .title {
+    color: black;
     font-size: var(--title);
     padding: .1rem 1rem;
     margin-bottom: 0rem;
@@ -137,6 +138,10 @@ main {
     align-content: center;
 }
 
+#landing-section p {
+    font-size: var(--text);
+}
+
 #project-section {
     display: flex;
     flex-flow: row wrap;
@@ -167,13 +172,51 @@ main {
 }
 
 .project-description {
-    font-size: var(--heading2);
+    font-size: var(--text);
     padding: 1rem;
     flex: 1 1 0;
 }
 
+#contact-section {
+    font-size: var(--text);
+    display: flex;
+    align-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+}
+
+#contact-img {
+    width: 50vw;
+    height: 100%;
+}
+
+.contact-col {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.contact-socials {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact-socials a{
+    font-size: 2rem;
+    color:#000000;
+}
+
 footer {
     background-color: var(--primary-background);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 footer small {

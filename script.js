@@ -18,7 +18,7 @@ function project_factory(project_data){
     return `
     <div class="project-container">
         <div class="project-column">
-            <h2 class="project-name">${project_name}</h2>
+            <h2 class="project-name">${project_name} - ${project_year}</h2>
             <div class="project-row">
                 ${project_row}
             </div>
@@ -52,9 +52,9 @@ $(window).on('load', function () {
     // Project content
     $.getJSON("settings.json", (data) => {
         let occupation_index = 0;
-        $.each(data["titles"], (key, val) => {
-            $("#oc-container").append(title_factory(key, val));
-        });
+        // $.each(data["titles"], (key, val) => {
+        //     $("#oc-container").append(title_factory(key, val));
+        // });
         $.each(data["projects"], (key, val) => {
             $("#project-section").append(project_factory(val));
         });
@@ -74,7 +74,7 @@ $(window).on('load', function () {
         }, OCCUPATION_ROTATE_LENGTH);
     });
 
-    display_section('project-section');
+    display_section('landing-section');
 
     $("#loader-wrapper").fadeOut(700);
 });

@@ -16,6 +16,8 @@
     <meta property="og:image" content="" />
 
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap"
@@ -31,23 +33,43 @@
         <div class="loader"></div>
     </div>
     <header>
-        <h1 class="title">Soren</h1>
-        <h1 class="title">Faulhaber</h1>
+        <a href="/">
+            <h1 class="title">Soren</h1>
+            <h1 class="title">Faulhaber</h1>
+        </a>
         <div id="oc-container"></div>
         <nav id="menu-bar">
             <div class="menu-line" style="flex-grow: 6;"></div>
             <ul>
-                <li class="active" onclick="display_section('project-section'); set_active_menu(this);">
-                    My Projects
+                <li onclick="display_section('project-section'); set_active_menu(this);">
+                    Projects
                 </li>
-                <li onclick="display_section('contact-section'); set_active_menu(this);">Contact Me</li>
+                <li onclick="display_section('contact-section'); set_active_menu(this);">Contact</li>
             </ul>
             <div class="menu-line" style="flex-grow: 1;"></div>
         </nav>
     </header>
     <main>
+        <section id="landing-section">
+            <p>
+                Artist/creator based out Madison WI
+            </p>
+        </section>
         <section id="project-section"></section>
-        <section id="contact-section"></section>
+        <section id="contact-section">
+            <div class="contact-col">
+                <div class="contact-socials">
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-envelope"></a>
+                </div>
+                <h1>
+                    Thanks for being interested in my work!
+                </h1>
+            </div>
+            <img id="contact-img" src="/imgs/watercolor.jpg" alt="Watercolor painting">
+        </section>
     </main>
     <footer>
         <small>©
