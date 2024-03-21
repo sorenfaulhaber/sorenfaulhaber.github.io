@@ -1,9 +1,12 @@
 {
-    "titles": [
-        "Leather Worker",
-        "Designer",
-        "Woodworker",
-        "Cordwainer"
+    "landing": [
+        {
+            "title": "Wood worker",
+            "img": "imgs/wooden_teak_box/image27.jpg"
+        },{
+            "title": "Leather worker",
+            "img": "imgs/leather_pouch/image2.jpg"
+        }
     ],
     "projects": [
         {
@@ -75,5 +78,10 @@
                 "imgs/reusable_sneaker/image19.jpg"
             ]
         }
-    ]
+    ],
+    "contact":{
+        "name": "Untitled watercolor",
+        "year_made": 2021,
+        "img": "imgs/watercolor.jpg"
+    }
 }

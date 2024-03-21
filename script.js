@@ -15,7 +15,7 @@ function project_factory(project_data){
     }
 
     if(project_year !== undefined){
-        project_name += `- ${project_year}`
+        project_name += ` - ${project_year}`
     }
 
     return `
@@ -27,6 +27,27 @@ function project_factory(project_data){
             </div>
         </div>
     </div>`
+}
+
+function slider_image_factory(sli){
+
+}
+
+function contact_page_factory(contact_info) {
+    project_name = contact_info.name || "";
+    project_year = contact_info.year_made;
+    project_img = contact_info.img;
+
+    if(project_year !== undefined){
+        project_name += ` ~ ${project_year}`
+    }
+
+    return `
+    <div class="contact-img-container">
+        <img id="contact-img" src="${project_img}" alt="${project_name}">
+        <h4 class="contact-img-desc"><i>${project_name}</i></h4>
+    </div>
+    `
 }
 
 function title_factory(index, title_name){
@@ -44,13 +65,13 @@ function display_section(section_id) {
             $(val).hide();
         }
     });
+    go_to_top();
 }
 
 function set_active_menu(element) {
     $(element).siblings().toggleClass('active', false);
     $(element).toggleClass('active', true);
 }
-
 
 function is_in_view(element, fullyInView) {
     var pageTop = $(window).scrollTop();
@@ -65,9 +86,24 @@ function is_in_view(element, fullyInView) {
     }
 }
 
+function go_to_top() {
+    window.scrollTo(0, 0);
+}
+
+let slides = document.getElementsByClassName("slider__slide");
+let currentSlide = 0;
+
+function changeSlide(moveTo) {
+    if (moveTo >= slides.length) {moveTo = 0;}
+    if (moveTo < 0) {moveTo = slides.length - 1;}
+    
+    slides[currentSlide].classList.toggle("active");
+    slides[moveTo].classList.toggle("active");
+    
+    currentSlide = moveTo;
+}
+
 $(window).scroll(function(){
-    var scroll = $(window).scrollTop();
-    console.log(is_in_view($("#title-link"),false));
     if(is_in_view($("#title-link"), false)){
         $("#menu-bar-icon-container").fadeOut();
     }else{
@@ -75,17 +111,36 @@ $(window).scroll(function(){
             $("#menu-bar-icon-container").css("display", "flex").hide().fadeIn();
         }
     }
+    // Top button
+    if($("#project-section").is(":visible") && $(window).scrollTop() > 90){
+        if(!$(".top-button").is(":visible")){
+            $(".top-button").css('display', 'block');
+        }
+    }else{
+        $(".top-button").css('display', 'none');
+    }
 });
 
 $(window).on('load', function () {
     // Project content
     $.getJSON("settings.json", (data) => {
         $.each(data["projects"], (key, val) => {
-            $("#project-section").append(project_factory(val));
+            $("#project-section").prepend(project_factory(val));
+        });
+        $("#contact-section").append(contact_page_factory(data["contact"]));
+        $.each(data["landing"], (key, val) => {
+            // $("#landing-slides").append(slider_image_factory(val));
         });
     });
 
-    display_section('project-section');
+    $("#nav-button--next").on("click", () => {
+        changeSlide(currentSlide + 1)
+    });
+    $("#nav-button--prev").on("click", () => {
+        changeSlide(currentSlide - 1)
+    });
+
+    display_section('landing-section');
 
     $("#loader-wrapper").fadeOut(700);
 });
