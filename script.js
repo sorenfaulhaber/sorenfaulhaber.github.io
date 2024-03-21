@@ -59,7 +59,7 @@ $(window).on('load', function () {
         });
     });
 
-    display_section('landing-section');
+    display_section('project-section');
 
     $("#loader-wrapper").fadeOut(700);
 });
