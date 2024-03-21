@@ -58,16 +58,23 @@
     </header>
     <main>
         <section id="landing-section">
-            <div class="contact-col">
-                <p>
-                    <b>Wood worker</b> based out Madison WI
-                </p>
-            </div>
-            <div class="contact-img-container">
-                <div class="img-slide-container">
-                    <img src="imgs/wooden_teak_box/image27.jpg">
+            <div class="img-slide-container">
+                <div class="slider">
+                    <div class="slider__slides">
+                        <div class="slider__slide active">
+                            <img src="imgs/wooden_teak_box/image27.jpg">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="imgs/leather_pouch/image2.jpg">
+                        </div>
+                    </div>
+                    <div id="nav-button--prev" class="slider__nav-button"></div>
+                    <div id="nav-button--next" class="slider__nav-button"></div>
                 </div>
             </div>
+            <p>
+                <b id="occupation-tag">Wood worker</b> based out Madison WI
+            </p>
         </section>
         <section id="project-section">
             <button class="top-button" onclick="go_to_top();">^</button>
@@ -81,12 +88,8 @@
                     <a href="#" class="fa fa-envelope"></a>
                 </div>
                 <h1>
-                    Thanks for being interested in my work!
+                    I appreciate your interest!
                 </h1>
-            </div>
-            <div class="contact-img-container">
-                <img id="contact-img" src="/imgs/watercolor.jpg" alt="Watercolor painting">
-                <h4 class="contact-img-desc"><i>Untitled watercolor ~ 2021</i></h4>
             </div>
         </section>
     </main>

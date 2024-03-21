@@ -125,6 +125,7 @@ main {
     justify-content: space-evenly;
     align-items: flex-start;
     align-content: center;
+    height: 100%;
 }
 
 .top-button {
@@ -151,21 +152,120 @@ main {
     width: 100%;
     display: flex;
     align-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 5rem;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    gap: 3rem;
 }
 
 #landing-section p {
+    text-align: center;
     background-color: var(--primary-background);
     font-size: var(--text);
     position: sticky;
     top: 50px;
+    text-wrap: balance;
 }
 
+.img-slide-container {
+    text-align: center;
+    width: 52%;
+    min-width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 10px;
+    background-color: var(--primary-background);
+    overflow: hidden;
+}
+
+.slider__slides {
+    width: 100%;
+    padding-top: 66%;
+}
+
+.slider__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;   
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    transition: 1s;
+    opacity: 0;
+}
+
+.slider__slide.active {
+    opacity: 1;
+}
+
+.slider__nav-button {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: #333;
+    opacity: .8;
+    cursor: pointer;
+}
+
+#nav-button--prev {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#nav-button--next {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+#nav-button--prev::after,
+#nav-button--next::after {
+    content: "";
+    position: absolute;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    width: 40%;
+    height: 40%;
+}
+
+#nav-button--next::after{
+    top: 50%;
+    right: 50%;
+    transform: translate(25%, -50%) rotate(-45deg);
+}
+
+#nav-button--prev::after {
+    top: 50%;
+    right: 50%;
+    transform: translate(75%, -50%) rotate(135deg);
+}
+
+@media screen and (max-width: 640px) {
+    .slider__nav-button {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
 .img-slide-container img{
-    width: 100%;    
+    width: 100%;
+    /* height: 100%; */
 }
 
 #project-section {
@@ -185,6 +285,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     outline: black solid 1px;
+    max-height: min-content;
 }
 
 .project-name {
@@ -218,14 +319,12 @@ main {
 
 .contact-img-desc {
     color: lightslategray;
-    /* position: absolute;
-    bottom: 0;
-    right: 0; */
 }
 
 .contact-img-container {
     width: 50vw;
     height: 100%;
+    flex-grow: 5;
 }
 
 .contact-col {

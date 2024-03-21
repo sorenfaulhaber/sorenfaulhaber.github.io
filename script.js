@@ -29,6 +29,27 @@ function project_factory(project_data){
     </div>`
 }
 
+function slider_image_factory(sli){
+
+}
+
+function contact_page_factory(contact_info) {
+    project_name = contact_info.name || "";
+    project_year = contact_info.year_made;
+    project_img = contact_info.img;
+
+    if(project_year !== undefined){
+        project_name += ` ~ ${project_year}`
+    }
+
+    return `
+    <div class="contact-img-container">
+        <img id="contact-img" src="${project_img}" alt="${project_name}">
+        <h4 class="contact-img-desc"><i>${project_name}</i></h4>
+    </div>
+    `
+}
+
 function title_factory(index, title_name){
     if(index == 0){
         return `<h2 class="oc-text oc-text-shown">${title_name}</h2>`
@@ -69,6 +90,19 @@ function go_to_top() {
     window.scrollTo(0, 0);
 }
 
+let slides = document.getElementsByClassName("slider__slide");
+let currentSlide = 0;
+
+function changeSlide(moveTo) {
+    if (moveTo >= slides.length) {moveTo = 0;}
+    if (moveTo < 0) {moveTo = slides.length - 1;}
+    
+    slides[currentSlide].classList.toggle("active");
+    slides[moveTo].classList.toggle("active");
+    
+    currentSlide = moveTo;
+}
+
 $(window).scroll(function(){
     if(is_in_view($("#title-link"), false)){
         $("#menu-bar-icon-container").fadeOut();
@@ -93,6 +127,17 @@ $(window).on('load', function () {
         $.each(data["projects"], (key, val) => {
             $("#project-section").prepend(project_factory(val));
         });
+        $("#contact-section").append(contact_page_factory(data["contact"]));
+        $.each(data["landing"], (key, val) => {
+            // $("#landing-slides").append(slider_image_factory(val));
+        });
+    });
+
+    $("#nav-button--next").on("click", () => {
+        changeSlide(currentSlide + 1)
+    });
+    $("#nav-button--prev").on("click", () => {
+        changeSlide(currentSlide - 1)
     });
 
     display_section('landing-section');
