@@ -53,7 +53,7 @@
 
 header {
     background-color: var(--primary-background);
-    display: contents   ;
+    display: contents;
 }
 
 .title {
@@ -118,7 +118,6 @@ header {
     text-decoration-thickness: 5%;
 }
 
-
 main {
     padding: 2rem;
     display: flex;
@@ -128,15 +127,52 @@ main {
     align-content: center;
 }
 
-#landing-section p {
+.top-button {
+    display: none;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 20px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #dededa;
+    color: black; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 2px 10px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: var(--heading2); /* Increase font size */
+    font-family: inherit;
+    text-decoration: solid black 1px   ;
+}
+
+#landing-section {
+    /* text-align: center; */
     font-size: var(--text);
+    width: 100%;
+    display: flex;
+    align-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 5rem;
+}
+
+#landing-section p {
+    background-color: var(--primary-background);
+    font-size: var(--text);
+    position: sticky;
+    top: 50px;
+}
+
+.img-slide-container img{
+    width: 100%;    
 }
 
 #project-section {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    gap: 5rem;
+    gap: 2rem;
 }
 
 .project-column {
@@ -149,7 +185,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     outline: black solid 1px;
-    max-width: 65vw;
 }
 
 .project-name {

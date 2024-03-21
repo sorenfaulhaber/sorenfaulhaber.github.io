@@ -47,7 +47,7 @@
             </div>
             <div class="menu-line" style="flex-grow: 10;"></div>
             <ul style="flex-grow: 2;">
-                <li class="active" onclick="display_section('project-section'); set_active_menu(this);">
+                <li onclick="display_section('project-section'); set_active_menu(this);">
                     Projects
                 </li>
                 <!-- <div class="menu-line" style="flex-grow: 1;"></div> -->
@@ -58,11 +58,20 @@
     </header>
     <main>
         <section id="landing-section">
-            <p>
-                Artist/creator based out Madison WI
-            </p>
+            <div class="contact-col">
+                <p>
+                    <b>Wood worker</b> based out Madison WI
+                </p>
+            </div>
+            <div class="contact-img-container">
+                <div class="img-slide-container">
+                    <img src="imgs/wooden_teak_box/image27.jpg">
+                </div>
+            </div>
         </section>
-        <section id="project-section"></section>
+        <section id="project-section">
+            <button class="top-button" onclick="go_to_top();">^</button>
+        </section>
         <section id="contact-section">
             <div class="contact-col">
                 <div class="contact-socials">
@@ -79,7 +88,6 @@
                 <img id="contact-img" src="/imgs/watercolor.jpg" alt="Watercolor painting">
                 <h4 class="contact-img-desc"><i>Untitled watercolor ~ 2021</i></h4>
             </div>
-            
         </section>
     </main>
     <footer>

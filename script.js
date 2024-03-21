@@ -15,7 +15,7 @@ function project_factory(project_data){
     }
 
     if(project_year !== undefined){
-        project_name += `- ${project_year}`
+        project_name += ` - ${project_year}`
     }
 
     return `
@@ -44,13 +44,13 @@ function display_section(section_id) {
             $(val).hide();
         }
     });
+    go_to_top();
 }
 
 function set_active_menu(element) {
     $(element).siblings().toggleClass('active', false);
     $(element).toggleClass('active', true);
 }
-
 
 function is_in_view(element, fullyInView) {
     var pageTop = $(window).scrollTop();
@@ -65,9 +65,11 @@ function is_in_view(element, fullyInView) {
     }
 }
 
+function go_to_top() {
+    window.scrollTo(0, 0);
+}
+
 $(window).scroll(function(){
-    var scroll = $(window).scrollTop();
-    console.log(is_in_view($("#title-link"),false));
     if(is_in_view($("#title-link"), false)){
         $("#menu-bar-icon-container").fadeOut();
     }else{
@@ -75,17 +77,25 @@ $(window).scroll(function(){
             $("#menu-bar-icon-container").css("display", "flex").hide().fadeIn();
         }
     }
+    // Top button
+    if($("#project-section").is(":visible") && $(window).scrollTop() > 90){
+        if(!$(".top-button").is(":visible")){
+            $(".top-button").css('display', 'block');
+        }
+    }else{
+        $(".top-button").css('display', 'none');
+    }
 });
 
 $(window).on('load', function () {
     // Project content
     $.getJSON("settings.json", (data) => {
         $.each(data["projects"], (key, val) => {
-            $("#project-section").append(project_factory(val));
+            $("#project-section").prepend(project_factory(val));
         });
     });
 
-    display_section('project-section');
+    display_section('landing-section');
 
     $("#loader-wrapper").fadeOut(700);
 });
