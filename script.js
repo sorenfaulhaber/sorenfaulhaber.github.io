@@ -7,12 +7,22 @@ function project_factory(project_data){
     project_year = project_data.year_made;
     project_category = project_data.category || "";
     project_description = project_data.description || "";
-    project_description = "";
+    // project_description = "";
+
+    project_row = `<img class="project-image" src="${project_imgs[0]}">`
+    if(project_description !== ""){
+        project_row += `<p class="project-description">${project_description}</p>`
+    }
+
+
     return `
     <div class="project-container">
-        <h2 class="project-name">${project_name}</h2>
-        <img class="project-image" src="${project_imgs[0]}">
-        <p class="project-description">${project_description}</p>
+        <div class="project-column">
+            <h2 class="project-name">${project_name}</h2>
+            <div class="project-row">
+                ${project_row}
+            </div>
+        </div>
     </div>`
 }
 
@@ -32,13 +42,17 @@ function display_section(section_id) {
         }
     });
 }
+
+function set_active_menu(element) {
+    $(element).siblings().toggleClass('active', false);
+    $(element).toggleClass('active', true);
+}
     
 $(window).on('load', function () {
     // Project content
     $.getJSON("settings.json", (data) => {
         let occupation_index = 0;
         $.each(data["titles"], (key, val) => {
-            console.log(title_factory(val));
             $("#oc-container").append(title_factory(key, val));
         });
         $.each(data["projects"], (key, val) => {
@@ -59,10 +73,8 @@ $(window).on('load', function () {
             );
         }, OCCUPATION_ROTATE_LENGTH);
     });
+
+    display_section('project-section');
+
     $("#loader-wrapper").fadeOut(700);
-
-
-    // Occupation rotation
-    console.log($("#oc-container").children())
-
 });
