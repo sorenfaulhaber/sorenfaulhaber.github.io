@@ -50,7 +50,33 @@ function set_active_menu(element) {
     $(element).siblings().toggleClass('active', false);
     $(element).toggleClass('active', true);
 }
-    
+
+
+function is_in_view(element, fullyInView) {
+    var pageTop = $(window).scrollTop();
+    var pageBottom = pageTop + $(window).height();
+    var elementTop = $(element).offset().top;
+    var elementBottom = elementTop + $(element).height();
+
+    if (fullyInView === true) {
+        return ((pageTop < elementTop) && (pageBottom > elementBottom));
+    } else {
+        return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+    }
+}
+
+$(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    console.log(is_in_view($("#title-link"),false));
+    if(is_in_view($("#title-link"), false)){
+        $("#menu-bar-icon-container").fadeOut();
+    }else{
+        if(!$("#menu-bar-icon-container").is(":visible")){
+            $("#menu-bar-icon-container").css("display", "flex").hide().fadeIn();
+        }
+    }
+});
+
 $(window).on('load', function () {
     // Project content
     $.getJSON("settings.json", (data) => {

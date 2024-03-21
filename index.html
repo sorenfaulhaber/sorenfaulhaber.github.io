@@ -33,17 +33,24 @@
         <div class="loader"></div>
     </div>
     <header>
-        <a href="/">
+        <a id="title-link" href="/">
             <h1 class="title">Soren</h1>
             <h1 class="title">Faulhaber</h1>
         </a>
-        <div id="oc-container"></div>
+        <!-- <div id="oc-container"></div> -->
         <nav id="menu-bar">
-            <div class="menu-line" style="flex-grow: 6;"></div>
-            <ul>
+            <div id="menu-bar-icon-container" style="flex-grow: 1;">
+                <div class="menu-line" style="flex-grow: 1;"></div>
+                <a id="menu-bar-icon" href="/">
+                    <h1>SF</h1>
+                </a>
+            </div>
+            <div class="menu-line" style="flex-grow: 10;"></div>
+            <ul style="flex-grow: 2;">
                 <li class="active" onclick="display_section('project-section'); set_active_menu(this);">
                     Projects
                 </li>
+                <!-- <div class="menu-line" style="flex-grow: 1;"></div> -->
                 <li onclick="display_section('contact-section'); set_active_menu(this);">Contact</li>
             </ul>
             <div class="menu-line" style="flex-grow: 1;"></div>
