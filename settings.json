@@ -24,12 +24,55 @@
             ]
         },
         {
+            "name": "Rolled Leather Pouch",
+            "category": "leatherwork",
+            "imgs":[
+                "imgs/leather_pouch/image17.jpg"
+            ]
+        },
+        {
             "name": "Planthetic Pipes",
             "year_made": 2019,
             "category": "woodwork",
             "description": "Planthetic Pipes was a brand project I started in 2019 to explore wooden pipe making and test different design ideas using my wooden lathe and woodworking shop. I learned a lot about scaled production and designing with the manufacturing process in mind.",
             "imgs": [
                 "imgs/planthetic_pipes/image34.jpg"
+            ]
+        },
+        {
+            "name": "Patterned Shorts",
+            "year_made": 2021,
+            "category": "clothing",
+            "description": "Patterned and modified from an existing pair of shorts, I made these from a picnic tablecloth using an old Singer straight stitch machine, an overlock machine, and a buttonhole attachment for the waist tie holes.",
+            "imgs":[
+                "imgs/patterned_shorts/image30.jpg"
+            ]
+        },
+        {
+            "name": "The Bowling Pair",
+            "year_made": 2021,
+            "category": "shoes",
+            "description": "This pair I made resembles more of a dress shoe. It was made in all leather, from a pattern I created myself. The leather is quite thin, so I’ve layered it while keeping the flexibility to be able to create the toe curve. All of my shoes have been sewn on a cheap walking foot leather machine, so it is always a tedious and long process when sewing uppers. The detail shows especially on this pair, as the design highlights the stitching. The soles were also made by me, and are not exactly ideal, but in future shoes I improved that.",
+            "imgs":[
+                "imgs/bowling_pair/image31.jpg"
+            ]
+        },
+        {
+            "name": "The Suede Pair",
+            "year_made": 2021,
+            "category": "shoes",
+            "description": "This project was a remaking of a pair of reebok sneakers I had. I decided to try to re-do them, as they were starting to fall apart. This was a great early experience with patterning, as I took the old shoes, patterned them, and then sewed a new upper. I kept the old soles of the shoes, but everything else I made. I learned what makes up a sneaker, and included all the new ingredients in this new pair. I sewed in a liner, with foam heel padding, and also learned how to mold the plastic toe and heel caps. With all my pairs of shoes, I’ve had to hand last them, taking time to make sure it sits right on the last before gluing the soles on.",
+            "imgs":[
+                "imgs/suede_pair/image24.jpg"
+            ]
+        },
+        {
+            "name": "Reusable Sneaker Concept",
+            "year_made": 2020,
+            "category": "shoes",
+            "description": "As one of my first complete pairs of shoes, this was a project I started, inspired by Nicole Mclaughlin. It’s a scalable concept for reusing old shoe soles in combination with using old clothing and fabric for the uppers. This pair specifically was made from an old pair of sneakers, and an upper made from an old pair of army pants, black canvas, and extra clasps from the pants. My concept involved making patterns for the upper, so that in theory anyone could print them off, gather the necessary materials, and make a shoe with their own theme and creative vision.",
+            "imgs":[
+                "imgs/reusable_sneaker/image19.jpg"
             ]
         }
     ]
