@@ -188,6 +188,17 @@ main {
 }
 
 #contact-img {
+    width: 100%;
+}
+
+.contact-img-desc {
+    color: lightslategray;
+    /* position: absolute;
+    bottom: 0;
+    right: 0; */
+}
+
+.contact-img-container {
     width: 50vw;
     height: 100%;
 }
